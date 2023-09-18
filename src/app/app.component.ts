@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  imports: [UserProfileComponent],
+  template: '<app-user-profile></app-user-profile>',
+  styles: [`
+    :host {
+      display: block;
+    }
+  `]
 })
-export class AppComponent {
-  title = 'ng-environment-initializer-demo';
-}
+export class AppComponent {}

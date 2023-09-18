@@ -1,13 +1,13 @@
-import { AsyncPipe, NgIf, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SettingsService } from '../../core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { SettingsService } from '../../core';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [NgStyle, RouterLinkActive, RouterLink],
+  imports: [NgStyle, RouterLinkActive, RouterLink, RouterOutlet],
   template: `
     <div>
       <div class="banner" [style]="topSignal()">
@@ -26,13 +26,14 @@ import { toSignal } from '@angular/core/rxjs-interop';
             <label for="languages" [style]="labelSignal()">Languages : </label>
             <span id="name" name="name" [style]="fontSignal()">Cantonese, English, Mandarin, Spanish</span>
           </div>
-      </div>  
+      </div>
       <ul>
         <li>
           <a routerLink="/lazy" routerLinkActive="active">Lazy load standalone component and providerCore throws error</a>
         </li>
       </ul>
-    </div>  
+      <router-outlet></router-outlet>
+    </div>
   `,
   styles: [`
     :host {
@@ -60,5 +61,4 @@ export class UserProfileComponent {
   contentSignal = computed(() => this.stylesSignal()?.content);
   labelSignal = computed(() => this.stylesSignal()?.label);
   fontSignal = computed(() => this.stylesSignal()?.font);
-  
 }

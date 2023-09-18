@@ -1,9 +1,9 @@
 import { provideHttpClient } from "@angular/common/http";
-import { EnvironmentProviders, ENVIRONMENT_INITIALIZER, inject, Provider } from "@angular/core";
-import { provideRouter, Route } from "@angular/router";
+import { ENVIRONMENT_INITIALIZER, EnvironmentProviders, Provider, inject } from "@angular/core";
+import { Route, provideRouter } from "@angular/router";
+import { CORE_GUARD } from "../injection-tokens/core-guard.token";
 import { PREFERENCE_URL } from "../injection-tokens/preference-url.token";
 import { SettingsService } from "../services";
-import { CORE_GUARD } from "../injection-tokens/core-guard.token";
 
 const APP_ROUTES: Route[] = [{
   path: 'lazy',
