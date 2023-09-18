@@ -19,11 +19,11 @@ import { SettingsService } from '../../core';
             <span id="name" name="name" [style]="fontSignal()">Mary Doe</span>
           </div>
           <div class="row">
-            <label for="gender" [style]="labelSignal()">Gender : </label>
+            <label for="gender" [style]="labelSignal()">Gender: </label>
             <span id="gender" name="gender" [style]="fontSignal()">Female</span>
           </div>
           <div class="row">
-            <label for="languages" [style]="labelSignal()">Languages : </label>
+            <label for="languages" [style]="labelSignal()">Languages: </label>
             <span id="name" name="name" [style]="fontSignal()">Cantonese, English, Mandarin, Spanish</span>
           </div>
       </div>
