@@ -12,7 +12,7 @@ export class SettingsService {
   private readonly httpClient = inject(HttpClient);
   private readonly stylesSub = new Subject<UserStyles>();
   styles$ = this.stylesSub.asObservable();
-  private url = inject<string>(PREFERENCE_URL);
+  private url = inject(PREFERENCE_URL);
 
   private load$ = this.httpClient.get<PreferencesHolder>(this.url)
     .pipe(
