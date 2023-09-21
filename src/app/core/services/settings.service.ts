@@ -17,8 +17,8 @@ export class SettingsService {
   private load$ = this.httpClient.get<PreferencesHolder>(this.url)
     .pipe(
       delay(800),
-      map(({ preferences }) => preferences),
-      map(({ top, content, label, font }) => {
+      map(({ preferences }) => { 
+        const { top, content, label, font } = preferences;
         return {
           top: {
             ...top,
