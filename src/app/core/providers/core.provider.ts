@@ -1,23 +1,15 @@
-import { provideHttpClient } from "@angular/common/http";
 import { ENVIRONMENT_INITIALIZER, EnvironmentProviders, Provider, inject } from "@angular/core";
-import { Route, provideRouter } from "@angular/router";
 import { CORE_GUARD } from "../injection-tokens/core-guard.token";
 import { PREFERENCE_URL } from "../injection-tokens/preference-url.token";
 import { SettingsService } from "../services";
 
-const APP_ROUTES: Route[] = [{
-  path: 'lazy',
-  loadComponent: () => import('../../lazy-loaded/lazy-loaded.component')
-    .then(mod => mod.LazyLoadedComponent)
-}];
-
 export function providerCore(): (EnvironmentProviders | Provider)[] {
+  console.log('providerCore called');
+
   return [
-    provideHttpClient(),
-    provideRouter(APP_ROUTES),
     {
       provide: CORE_GUARD,
-      useValue: 'CORE_GUARD'
+      useValue: 'CORE_GUARD',
     },
     {
       provide: PREFERENCE_URL,
@@ -31,6 +23,8 @@ export function providerCore(): (EnvironmentProviders | Provider)[] {
           skipSelf: true,
           optional: true,
         });
+
+        console.log('coreGuard', coreGuard);
 
         if (coreGuard) {
           throw new TypeError('providerCore cannot load more than once.');

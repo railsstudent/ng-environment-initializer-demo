@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { providerCore } from '../core';
+import { providerCore } from '../../core';
 
 @Component({
   selector: 'app-lazy-loaded',
