@@ -21,7 +21,7 @@ export function providerCore(): (EnvironmentProviders | Provider)[] {
     },
     {
       provide: PREFERENCE_URL,
-      useValue: 'https://gist.githubusercontent.com/railsstudent/7c8d4b6b6158812e02ca8efcc5259127/raw/2a2e44705130ed4042e7b3f9bfbeb344dffaa580/preferences.json',
+      useValue: 'https://gist.githubusercontent.com/railsstudent/7c8d4b6b6158812e02ca8efcc5259127/raw/3190954f22a439a9df00ed7377daa5a05a3c32b9/preferences.json',
     },
     {
       provide: ENVIRONMENT_INITIALIZER,
