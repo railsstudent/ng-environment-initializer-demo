@@ -1,9 +1,9 @@
-import { ENVIRONMENT_INITIALIZER, EnvironmentProviders, Provider, inject } from "@angular/core";
+import { ENVIRONMENT_INITIALIZER, Provider, inject } from "@angular/core";
 import { CORE_GUARD } from "../injection-tokens/core-guard.token";
 import { PREFERENCE_URL } from "../injection-tokens/preference-url.token";
 import { SettingsService } from "../services";
 
-export function providerCore(): (EnvironmentProviders | Provider)[] {
+export function providerCore(): Provider[] {
   console.log('providerCore called');
 
   return [
@@ -31,6 +31,7 @@ export function providerCore(): (EnvironmentProviders | Provider)[] {
         }
 
         inject(SettingsService).load();
+        console.log('[Core Provider] App started....')
       }
     }
   ];
