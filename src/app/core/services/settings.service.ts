@@ -17,26 +17,7 @@ export class SettingsService {
   private load$ = this.httpClient.get<PreferencesHolder>(this.url)
     .pipe(
       delay(800),
-      map(({ preferences }) => { 
-        const { top, content, label, font } = preferences;
-        return {
-          top: {
-            ...top,
-            fontSize: top.size,
-          },
-          content,
-          label: {
-            color: label.color,
-            fontSize: label.size
-          },
-          font: {
-            color: font.color,
-            fontSize: font.size,
-            fontWeight: font.weight,
-            fontStyle: font.style,
-          }
-        }
-      }),
+      map(({ preferences }) => preferences),
       takeUntilDestroyed(),
     );
 
