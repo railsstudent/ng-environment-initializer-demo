@@ -1,31 +1,6 @@
 export interface PreferencesHolder {
-  preferences: Preferences;
+  preferences: UserStyles;
 }
-
-export interface Preferences {
-  top: {
-    backgroundColor: string;
-    border: string;
-    color: string;
-    size: string;
-    textAlign: string;
-  },
-  content: {
-    backgroundColor: string;
-    border: string;
-  },
-  label: {
-    color: string;
-    size: string;
-  },
-  font: {
-    color: string;
-    size:  string;
-    style: string;
-    weight: string;
-  }  
-}
-
 
 export interface UserStyles {
   top: {
